@@ -6,6 +6,7 @@ public:
 	virtual void vf() { cout << "B1 :: vf()" << endl;};
 	void f() { cout << "B1 :: f()" << endl; };
 	virtual void pvf() = 0; //pure virtual -> <fv_nev>() = 0;
+	//tisztán virtuális --> nem példányosítható az osztály
 };
 
 class D1 : public B1 {
@@ -71,11 +72,13 @@ int main()
 	d2.vf();
 	d2.pvf();
 	
+	cout << "f-fv: " << endl;
 	D21 c;
 	D22 d;
 	
 	f(c);
 	f(d);
+	//B2 beli pvf-eket kapja meg, de override
 	
 
 	return 0;
